@@ -1,0 +1,84 @@
+@import url("header.css");
+@import url("forms.css");
+
+:root {
+  --primary-color: #0061f2;
+  --primary-color-lighter: #2f46a5;
+  --primary-color-darker: #020b6f;
+  --secondary-color: #ffffff;
+  --secondary-color-lighter: #aefff0;
+  --background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main > .imagen > img {
+  min-width: 95vw;
+  max-width: 95vw;
+}
+
+footer {
+  margin-top:auto;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 20px;
+}
+
+footer p {
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+}
+
+main div.imagen-clinica {
+  background-image: url("../img/clinica.jpg");
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+main div.imagen-clinica h1 {
+  padding: 4rem;
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.5rem;
+  color: #ffffff;
+  text-shadow: #00042d;
+}
+
+.informacion {
+  width: 100%;
+  margin-top: 4rem;
+  margin-left: 20%;
+}
+
+.display-none {
+  display: none;
+}
+
