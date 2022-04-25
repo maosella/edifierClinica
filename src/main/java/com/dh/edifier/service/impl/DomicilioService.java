@@ -52,7 +52,7 @@ public class DomicilioService implements IDomicilioService {
             throw new BadRequestException("El id del domicilio no puede ser null ni negativo");
         Domicilio domicilio = domicilioRepository.findById(id).orElse(null);
         if (domicilio == null)
-            throw new ResourceNotFoundException("No se encontró el domicilio con id" + id);
+            throw new ResourceNotFoundException("No se encontró el domicilio con id " + id);
 
         return springConfig.getModelMapper().map(domicilio, DomicilioDTO.class);
     }
@@ -73,7 +73,7 @@ public class DomicilioService implements IDomicilioService {
         if (domicilioDTO == null)
             throw new BadRequestException("No se pudo actualizar el domicilio null");
         if (domicilioDTO.getId() == null)
-            throw new BadRequestException("El id del domicilio a actualiar no puede ser null");
+            throw new BadRequestException("El id del domicilio a actualizar no puede ser null");
 
         Optional<Domicilio> domicilioEnBD = domicilioRepository.findById(domicilioDTO.getId());
         if (domicilioEnBD.isPresent()) {
@@ -87,7 +87,7 @@ public class DomicilioService implements IDomicilioService {
     @Override
     public void eliminar(Integer id) throws BadRequestException, ResourceNotFoundException{
         if (id == null || id < 1)
-            throw new BadRequestException("El ide del domicilio no puede ser null ni negativo");
+            throw new BadRequestException("El id del domicilio no puede ser null ni negativo");
         if (!domicilioRepository.existsById(id))
             throw new ResourceNotFoundException("No existe ningún domicilio con id: " + id);
         domicilioRepository.deleteById(id);

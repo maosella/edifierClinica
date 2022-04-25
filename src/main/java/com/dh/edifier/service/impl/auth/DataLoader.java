@@ -22,8 +22,8 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) throws BadRequestException {
 
-        usuarioService.crear(new Usuario(35865174, "admin", "admin@correo.com", "admin", Set.of(new Rol("ADMIN"), new Rol("USER"))));
-        usuarioService.crear(new Usuario(34785145, "user", "user@correo.com", "user", Set.of(new Rol("USER"))));
+        usuarioService.crear(new Usuario(123456789, "admin", "admin@gmail.com", "admin", Set.of(new Rol("ADMIN"), new Rol("USER"))));
+        usuarioService.crear(new Usuario(123456788, "user", "user@gmail.com", "user", Set.of(new Rol("USER"))));
 
     }
 }

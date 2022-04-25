@@ -33,7 +33,7 @@ public class OdontologoService implements IOdontologoService {
             throw new BadRequestException("La matrícula del odontólogo no puede ser null");
         Odontologo odontologo = odontologoRepository.buscar(matricula).orElse(null);
         if (odontologo == null)
-            throw new ResourceNotFoundException("El odontólogo con matrícula " + matricula + "no existe");
+            throw new ResourceNotFoundException("El odontólogo con matrícula " + matricula + " no existe");
 
         return springConfig.getModelMapper().map(odontologo, OdontologoDTO.class);
     }
@@ -101,10 +101,10 @@ public class OdontologoService implements IOdontologoService {
     }
 
     private Odontologo actualizar(Odontologo odontologo, OdontologoDTO odontologoDTO){
-        if (odontologoDTO.getNombre() != null){
+        if (odontologoDTO.getNombre() != null) {
             odontologo.setNombre(odontologoDTO.getNombre());
         }
-        if (odontologoDTO.getApellido() != null){
+        if (odontologoDTO.getApellido() != null) {
             odontologo.setApellido(odontologoDTO.getApellido());
         }
         if (odontologoDTO.getMatricula() != null) {

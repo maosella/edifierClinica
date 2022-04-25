@@ -1,6 +1,5 @@
 package com.dh.edifier.service;
 
-import com.dh.edifier.entities.Domicilio;
 import com.dh.edifier.model.DomicilioDTO;
 import org.springframework.stereotype.Service;
 

@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 import java.util.Optional;
 
-public interface IPacienteRepository extends JpaRepository<Paciente,Integer> {
+public interface IPacienteRepository extends JpaRepository<Paciente, Integer> {
 
     @Query("SELECT p FROM Paciente p WHERE p.dni=?1")
     Optional<Paciente> buscar(Integer dni);

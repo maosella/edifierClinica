@@ -38,7 +38,7 @@ public class PacienteService implements IPacienteService {
             throw new BadRequestException("El DNI del paciente no puede ser null");
         Paciente paciente = pacienteRepository.buscar(dni).orElse(null);
         if (paciente == null)
-            throw new ResourceNotFoundException("No se encontró el paciente del DNI " + dni);
+            throw new ResourceNotFoundException("No se encontró el paciente con DNI " + dni);
         return springConfig.getModelMapper().map(paciente, PacienteDTO.class);
     }
 

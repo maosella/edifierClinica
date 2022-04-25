@@ -52,22 +52,17 @@ public class UsuarioService implements UserDetailsService {
 
     @Override
     @Transactional(readOnly = true)
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<Usuario> u = usuarioRepository.findByUsername(username);
         if (u.isEmpty())
-            throw new UsernameNotFoundException("No existe el usuario con username : " + username);
+            throw new UsernameNotFoundException("No existe el usuario con username: " + username);
 
         Usuario usuario = u.get();
         Set<GrantedAuthority> autorizaciones = new HashSet<>();
         for (Rol rol: usuario.getRoles()) {
             autorizaciones.add(new SimpleGrantedAuthority(rol.getName()));
         }
-        return new User(usuario.getEmail(), usuario.getPassword(),
-                true,
-                true,
-                true,
-                true,
-                autorizaciones);
+        return new User(usuario.getEmail(), usuario.getPassword(), true, true, true, true, autorizaciones);
     }
 }
 

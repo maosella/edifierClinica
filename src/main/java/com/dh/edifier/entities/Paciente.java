@@ -20,7 +20,7 @@ public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "paciente_seq")
     @SequenceGenerator(name = "paciente_seq", sequenceName = "paciente_seq", allocationSize = 1)
-    @Column(name = "paciente_id")
+    @Column
     private Integer id;
 
     @Setter
@@ -41,7 +41,7 @@ public class Paciente {
 
     @Setter
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "domicilio_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "domicilio_id", nullable = false)
     private Domicilio domicilio;
 
     @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)

@@ -5,7 +5,6 @@ import com.dh.edifier.exceptions.BadRequestException;
 import com.dh.edifier.exceptions.ResourceNotFoundException;
 import com.dh.edifier.model.OdontologoDTO;
 import com.dh.edifier.service.IOdontologoService;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -36,7 +35,7 @@ public class OdontologoController implements CRUDController<OdontologoDTO> {
             @ApiResponse(code = 400, message = "Bad Request")
     })
     @PostMapping()
-    public ResponseEntity<?> registrar(@RequestBody OdontologoDTO odontologo) throws BadRequestException, ResourceNotFoundException {
+    public ResponseEntity<OdontologoDTO> registrar(@RequestBody OdontologoDTO odontologo) throws BadRequestException, ResourceNotFoundException {
         OdontologoDTO odontologoInsertado = odontologoService.crear(odontologo);
         return ResponseEntity.ok(odontologoInsertado);
     }
@@ -49,7 +48,7 @@ public class OdontologoController implements CRUDController<OdontologoDTO> {
             @ApiResponse(code = 400, message = "Bad Request")
     })
     @GetMapping("/{id}")
-    public ResponseEntity<?> buscarPorId(Integer id) throws BadRequestException, ResourceNotFoundException {
+    public ResponseEntity<OdontologoDTO> buscarPorId(@PathVariable Integer id) throws BadRequestException, ResourceNotFoundException {
         OdontologoDTO odontologo = odontologoService.buscarPorId(id);
         return ResponseEntity.ok(odontologo);
     }
@@ -66,7 +65,7 @@ public class OdontologoController implements CRUDController<OdontologoDTO> {
         return ResponseEntity.ok(odontologo);
     }
 
-    @ApiOperation(value = "Buscar odontólogos por nombre")
+    @ApiOperation(value = "Busca odontólogos por nombre")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success | OK"),
             @ApiResponse(code = 400, message = "Bad Request")
@@ -77,7 +76,7 @@ public class OdontologoController implements CRUDController<OdontologoDTO> {
         return ResponseEntity.ok(odontologos);
     }
 
-    @ApiOperation(value = "Buscar odontólogos por nombre y apellido")
+    @ApiOperation(value = "Busca odontólogos por nombre y apellido")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success | OK"),
             @ApiResponse(code = 400, message = "Bad Request")
@@ -92,10 +91,11 @@ public class OdontologoController implements CRUDController<OdontologoDTO> {
     @ApiOperation(value = "Actualiza un odontólogo")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success | OK"),
-            @ApiResponse(code = 400, message = "Not Found"),
+            @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 400, message = "Bad Request")
     })
-    public ResponseEntity<?> actualizar(OdontologoDTO odontologo) throws BadRequestException, ResourceNotFoundException {
+    @PutMapping()
+    public ResponseEntity<OdontologoDTO> actualizar(@RequestBody OdontologoDTO odontologo) throws BadRequestException, ResourceNotFoundException {
         OdontologoDTO actualizado = odontologoService.actualizar(odontologo);
         return ResponseEntity.ok(actualizado);
     }
@@ -114,7 +114,7 @@ public class OdontologoController implements CRUDController<OdontologoDTO> {
     }
 
     @Override
-    @ApiOperation(value = "Buscar todos los odontologos")
+    @ApiOperation(value = "Busca todos los odontólogos")
     @ApiResponses(value = { @ApiResponse(code = 400, message = "Bad Request") })
     @GetMapping
     public ResponseEntity<?> buscarTodos() {

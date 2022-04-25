@@ -59,7 +59,7 @@ public class TurnoService implements ITurnoService {
     @Override
     public TurnoDTO buscarPorId(Integer id) throws BadRequestException, ResourceNotFoundException {
         if (id == null || id < 1)
-            throw new BadRequestException("El id del tuno no puede ser null ni negativo");
+            throw new BadRequestException("El id del turno no puede ser null ni negativo");
         Turno turno = turnoRepository.findById(id).orElse(null);
         if (turno == null)
             throw new ResourceNotFoundException("No se encontró el turno con id " + id);
@@ -79,7 +79,7 @@ public class TurnoService implements ITurnoService {
                 turnoDTO.setPaciente(pacienteService.buscarPorId(pacienteId));
                 turnoDTO.setOdontologo(odontologoService.buscarPorId(odontologoId));
             } else {
-                throw new BadRequestException("El paciente u el odontólogo no existen");
+                throw new BadRequestException("El odontólogo ya tiene un turno programado para ese día en ese horario");
             }
         }
         return turnoDTO;
@@ -103,7 +103,7 @@ public class TurnoService implements ITurnoService {
                 Turno guardado = turnoRepository.save(actualizado);
                 turnoActualizado = Mapper.map(springConfig.getModelMapper(), guardado, TurnoDTO.class);
             } else {
-                throw new BadRequestException("El odontólogo ta tiene un turno programado para ese día en ese horario");
+                throw new BadRequestException("El odontólogo ya tiene un turno programado para ese día en ese horario");
             }
         } else {
             throw new ResourceNotFoundException("El odontólogo no existe");
@@ -116,7 +116,7 @@ public class TurnoService implements ITurnoService {
         if (id == null || id < 1)
             throw new BadRequestException("El id del turno no puede ser null ni negativo");
         if (!turnoRepository.existsById(id))
-            throw new ResourceNotFoundException("No existe ningún turno con id " + id);
+            throw new ResourceNotFoundException("No existe ningún turno con id: " + id);
         turnoRepository.deleteById(id);
     }
 

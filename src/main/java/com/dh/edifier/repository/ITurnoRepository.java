@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 import java.util.Optional;
 
-public interface ITurnoRepository extends JpaRepository<Turno,Integer> {
+public interface ITurnoRepository extends JpaRepository<Turno, Integer> {
 
     @Query("SELECT t FROM Turno t WHERE t.paciente.nombre=?1 AND t.paciente.apellido=?2 AND t.odontologo.nombre=?3 AND t.odontologo.apellido=?4")
     Optional<List<Turno>> buscar(String nombrePaciente, String apellidoPaciente, String nombreOdontologo, String apellidoOdontologo);

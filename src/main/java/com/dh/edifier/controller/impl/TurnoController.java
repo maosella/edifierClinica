@@ -32,7 +32,6 @@ public class TurnoController implements ITurnoController {
     @ApiOperation(value = "Crea un nuevo turno")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success | OK"),
-            @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 400, message = "Bad Request")
     })
     @PostMapping()
@@ -97,7 +96,8 @@ public class TurnoController implements ITurnoController {
             @ApiResponse(code = 404, message = "Not Found"),
             @ApiResponse(code = 400, message = "Bad Request")
     })
-    public ResponseEntity<?> actualizar(TurnoDTO turno) throws BadRequestException, ResourceNotFoundException {
+    @PutMapping()
+    public ResponseEntity<?> actualizar(@RequestBody TurnoDTO turno) throws BadRequestException, ResourceNotFoundException {
         TurnoDTO actualizado = turnoService.actualizar(turno);
         return ResponseEntity.ok(actualizado);
     }
@@ -119,13 +119,13 @@ public class TurnoController implements ITurnoController {
     @ApiOperation(value = "Busca todos los turnos")
     @ApiResponses(value = { @ApiResponse(code = 400, message = "Bad Request")  })
     @GetMapping
-    public ResponseEntity<?> buscarTodos() {
+    public ResponseEntity<List<TurnoDTO>> buscarTodos() {
         return ResponseEntity.ok(turnoService.consultarTodos());
     }
 
     @Override
-    @ApiOperation(value = "Buscar todos los turnos de la próxima semana")
-    @ApiResponses( { @ApiResponse(code = 400, message = "Bad Request") })
+    @ApiOperation(value = "Busca todos los turnos de la próxima semana")
+    @ApiResponses(value = { @ApiResponse(code = 400, message = "Bad Request") })
     @GetMapping("/proximos")
     public ResponseEntity<List<TurnoDTO>> buscarTurnosDesde(
             @RequestParam Integer dia,

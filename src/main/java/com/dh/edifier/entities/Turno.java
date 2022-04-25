@@ -39,10 +39,7 @@ public class Turno {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Turno turno = (Turno) o;
-        return Objects.equals(id, turno.id)
-                && Objects.equals(fecha, turno.fecha)
-                && Objects.equals(paciente, turno.paciente)
-                && Objects.equals(odontologo, turno.odontologo);
+        return Objects.equals(id, turno.id) && Objects.equals(fecha, turno.fecha) && Objects.equals(paciente, turno.paciente) && Objects.equals(odontologo, turno.odontologo);
     }
 
     @Override
