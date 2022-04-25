@@ -3,7 +3,7 @@
 
 ---
 
-##Proyecto Integrador Back-End-1 Martin Osella
+## Proyecto Integrador Back-End-1 Martin Osella
 ### Edifier Gestor de Turnos - Clinica Odontológica
 
 
@@ -33,5 +33,5 @@ java -jar ClinicaOdontologica.jar
 ```
 
 ---
-####Gracias a las personas que hicieron parte de este mini-proyecto y por darme la oportunidad de aprender de los que mas saben.
+###### Gracias a las personas que hicieron parte de este mini-proyecto y por darme la oportunidad de aprender de los que mas saben.
 
