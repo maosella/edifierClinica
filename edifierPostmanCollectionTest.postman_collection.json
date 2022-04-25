@@ -1,0 +1,729 @@
+{
+	"info": {
+		"_postman_id": "1e4c52fb-487e-40f0-9bce-546cf0eb2016",
+		"name": "Clinica Odontologica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Paciente",
+			"item": [
+				{
+					"name": "Crear paciente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Martin\",\r\n    \"apellido\": \"Osella\",\r\n    \"dni\": \"31234567\",\r\n    \"domicilio\": {\r\n        \"calle\": \" Pedro C Molina\",\r\n        \"numero\": \"1\",\r\n        \"localidad\": \"Almafuerte\",\r\n        \"provincia\": \"Cordoba\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pacientes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar paciente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Paciente Pepe\",\r\n    \"apellido\": \"Pepardo\",\r\n    \"dni\": \"999999999\",\r\n    \"domicilio\": {\r\n        \"id\": 1,\r\n        \"calle\": \"Calle Falsa\",\r\n        \"numero\": \"321\",\r\n        \"localidad\": \"Springfield\",\r\n        \"provincia\": \"Springfield\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pacientes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener pacientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener paciente por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete paciente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar paciente por dni",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/?dni=31234567",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								""
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "31234567"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar pacientes por nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/?nombre=Martin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								""
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Martin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar pacientes por nombre y apellido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/?nombre=Martin&apellido=Osella",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								""
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Martin"
+								},
+								{
+									"key": "apellido",
+									"value": "Osella"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Odontologo",
+			"item": [
+				{
+					"name": "Crear odontologo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Adrian\",\r\n    \"dni\": 31234567,\r\n    \"apellido\": \"Mena\",\r\n    \"matricula\": \"147852\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/odontologos/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"odontologos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar odontologo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Odontologo Pepito\",\r\n    \"apellido\": \"Pepardito\",\r\n    \"matricula\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/odontologos/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"odontologos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener odontologos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/odontologos/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"odontologos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener odontologo por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/odontologos/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"odontologos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete odontologo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/odontologos/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"odontologos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar odontologo por matricula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/odontologos/?matricula=147852",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"odontologos",
+								""
+							],
+							"query": [
+								{
+									"key": "matricula",
+									"value": "147852"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar odontologos por nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/odontologos/?nombre=Adrian",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"odontologos",
+								""
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Adrian"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar odontologos por nombre y apellido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/odontologos/?nombre=Adrian&apellido=Mena",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"odontologos",
+								""
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Adrian"
+								},
+								{
+									"key": "apellido",
+									"value": "Mena"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Turno",
+			"item": [
+				{
+					"name": "Crear turno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paciente\": {\"id\": \"1\"},\r\n    \"odontologo\": {\"id\": \"1\"},\r\n    \"fecha\": \"2021-10-02T18:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/turnos/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"turnos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar turno",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"paciente\": {\"id\": \"1\"},\r\n    \"odontologo\": {\"id\": \"1\"},\r\n    \"fecha\": \"2020-09-12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/turnos/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"turnos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener turnos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/turnos/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"turnos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener turnos proxima semana",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/turnos/proximos/?dia=30&mes=9&anio=2021&hora=18&minuto=0&cantidadDias=7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"turnos",
+								"proximos",
+								""
+							],
+							"query": [
+								{
+									"key": "dia",
+									"value": "30"
+								},
+								{
+									"key": "mes",
+									"value": "9"
+								},
+								{
+									"key": "anio",
+									"value": "2021"
+								},
+								{
+									"key": "hora",
+									"value": "18"
+								},
+								{
+									"key": "minuto",
+									"value": "0"
+								},
+								{
+									"key": "cantidadDias",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener turno por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/turnos/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"turnos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete turno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/turnos/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"turnos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener turno por nombres de odontologo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/turnos/?nombreOdontologo=Pepo&apellidoOdontologo=Pepardo",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"turnos",
+								""
+							],
+							"query": [
+								{
+									"key": "nombreOdontologo",
+									"value": "Pepo"
+								},
+								{
+									"key": "apellidoOdontologo",
+									"value": "Pepardo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener turno por nombres de paciente y odontologo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/turnos/?nombrePaciente=Pepe&apellidoPaciente=Pepardo&nombreOdontologo=Pepo&apellidoOdontologo=Pepardo",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"turnos",
+								""
+							],
+							"query": [
+								{
+									"key": "nombrePaciente",
+									"value": "Pepe"
+								},
+								{
+									"key": "apellidoPaciente",
+									"value": "Pepardo"
+								},
+								{
+									"key": "nombreOdontologo",
+									"value": "Pepo"
+								},
+								{
+									"key": "apellidoOdontologo",
+									"value": "Pepardo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener turno por matricula y dni",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/turnos/?matricula=123&dni=123456789",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"turnos",
+								""
+							],
+							"query": [
+								{
+									"key": "matricula",
+									"value": "123"
+								},
+								{
+									"key": "dni",
+									"value": "123456789"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login Admin",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
