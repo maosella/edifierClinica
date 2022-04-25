@@ -35,7 +35,7 @@ public class PacienteController implements CRUDController<PacienteDTO> {
             @ApiResponse(code = 400, message = "Bad Request")
     })
     @PostMapping()
-    public ResponseEntity<?> registrar(@RequestBody PacienteDTO paciente) throws BadRequestException, ResourceNotFoundException {
+    public ResponseEntity<PacienteDTO> registrar(@RequestBody PacienteDTO paciente) throws BadRequestException, ResourceNotFoundException {
         paciente.setFechaIngreso(LocalDate.now());
         PacienteDTO pacienteInsertado = pacienteService.crear(paciente);
         return ResponseEntity.ok(pacienteInsertado);
@@ -102,7 +102,14 @@ public class PacienteController implements CRUDController<PacienteDTO> {
     }
 
     @Override
-    public ResponseEntity<String> eliminar(Integer id) throws BadRequestException, ResourceNotFoundException {
+    @ApiOperation(value = "Elimina un paciente")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success | OK"),
+            @ApiResponse(code = 404, message = "Not Found"),
+            @ApiResponse(code = 400, message = "Bad Request")
+    })
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable Integer id) throws BadRequestException, ResourceNotFoundException {
         pacienteService.eliminar(id);
         return ResponseEntity.ok("Se eliminó correctamente el paciente con id " + id);
     }

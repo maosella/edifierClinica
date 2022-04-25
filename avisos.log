@@ -6,3 +6,26 @@
 [2022-04-24 19:26:03] [ERROR] [GlobalExceptionsHandler:17] El turno u odontólogo es null
 [2022-04-24 22:10:26] [ERROR] [GlobalExceptionsHandler:17] El turno u odontólogo no existen
 [2022-04-24 22:10:27] [ERROR] [GlobalExceptionsHandler:17] El turno u odontólogo es null
+[2022-04-24 22:30:56] [ERROR] [GlobalExceptionsHandler:17] El turno u odontólogo no existen
+[2022-04-24 22:30:56] [ERROR] [GlobalExceptionsHandler:17] El turno u odontólogo es null
+[2022-04-24 22:35:58] [ERROR] [GlobalExceptionsHandler:22] El odontólogo no existe
+[2022-04-24 22:35:58] [ERROR] [GlobalExceptionsHandler:22] El odontólogo no existe
+[2022-04-24 22:35:58] [ERROR] [GlobalExceptionsHandler:22] No existe ningún odontólogo con id: 999
+[2022-04-24 22:35:58] [ERROR] [GlobalExceptionsHandler:22] No se encontró el paciente con id 999
+[2022-04-24 22:35:58] [ERROR] [GlobalExceptionsHandler:22] No se encontró el paciente con id 999
+[2022-04-24 22:35:58] [ERROR] [GlobalExceptionsHandler:17] El turno u odontólogo no existen
+[2022-04-24 22:35:58] [ERROR] [GlobalExceptionsHandler:22] No se encontró el turno con id 999
+[2022-04-24 22:35:58] [ERROR] [GlobalExceptionsHandler:17] El turno u odontólogo es null
+[2022-04-24 22:35:58] [ERROR] [GlobalExceptionsHandler:22] No existe ningún turno con id: 999
+[2022-04-24 22:35:58] [ERROR] [GlobalExceptionsHandler:22] No se encontró el turno con id 999
+[2022-04-24 23:03:49] [ERROR] [GlobalExceptionsHandler:22] El odontólogo no existe
+[2022-04-24 23:03:50] [ERROR] [GlobalExceptionsHandler:22] El odontólogo no existe
+[2022-04-24 23:03:50] [ERROR] [GlobalExceptionsHandler:22] No existe ningún odontólogo con id: 999
+[2022-04-24 23:03:50] [ERROR] [GlobalExceptionsHandler:22] No se encontró el paciente con id 999
+[2022-04-24 23:03:50] [ERROR] [GlobalExceptionsHandler:22] No existe ningún paciente con id: 999
+[2022-04-24 23:03:50] [ERROR] [GlobalExceptionsHandler:22] No se encontró el paciente con id 999
+[2022-04-24 23:03:50] [ERROR] [GlobalExceptionsHandler:17] El turno u odontólogo no existen
+[2022-04-24 23:03:50] [ERROR] [GlobalExceptionsHandler:22] No se encontró el turno con id 999
+[2022-04-24 23:03:50] [ERROR] [GlobalExceptionsHandler:17] El turno u odontólogo es null
+[2022-04-24 23:03:50] [ERROR] [GlobalExceptionsHandler:22] No existe ningún turno con id: 999
+[2022-04-24 23:03:50] [ERROR] [GlobalExceptionsHandler:22] No se encontró el turno con id 999
